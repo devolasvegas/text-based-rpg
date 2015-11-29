@@ -13,9 +13,13 @@ var playerName; /* container that stores player name */
 var attackType; /* container that stores which attack type player chose */
 var damage; /* container that stores damage */
 
-/**/
+/**
+ * Returns the damage of Warrior attack 1
+ * @returns {Number} damage dealt by attack1
+ */
 function WarriorAttackOne() {
 	var attackChance;
+	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
@@ -24,11 +28,15 @@ function WarriorAttackOne() {
 	} else {
 		/* do high damage */
 	}
-
+	return attackDamage;
 }
-/**/
+/**
+ * Returns the damage of Warrior attack 2
+ * @returns {Number} damage dealt by attack2
+ */
 function WarriorAttackTwo() {
 	var attackChance;
+	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
@@ -37,10 +45,15 @@ function WarriorAttackTwo() {
 	} else {
 		/* do high damage */
 	}
+	return attackDamage;
 }
-/**/
+/**
+ * Returns the damage of Warrior attack 3
+ * @returns {Number} damage dealt by attack3
+ */
 function WarriorAttackThree() {
 	var attackChance;
+	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
@@ -49,10 +62,15 @@ function WarriorAttackThree() {
 	} else {
 		/* do high damage */
 	}
+	return attackDamage;
 }
-/**/
+/**
+ * Returns the damage of Mage attack 1
+ * @returns {Number} damage dealt by attack1
+ */
 function MageAttackOne() {
 	var attackChance;
+	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
@@ -61,10 +79,15 @@ function MageAttackOne() {
 	} else {
 		/* do high damage */
 	}
+	return attackDamage;
 }
-/**/
+/**
+ * Returns the damage of Mage attack 2
+ * @returns {Number} damage dealt by attack2
+ */
 function MageAttackTwo() {
 	var attackChance;
+	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
@@ -73,10 +96,15 @@ function MageAttackTwo() {
 	} else {
 		/* do high damage */
 	}
+	return attackDamage;
 }
-/**/
+/**
+ * Returns the damage of Mage attack 3
+ * @returns {Number} damage dealt by attack3
+ */
 function MageAttackThree() {
 	var attackChance;
+	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
@@ -85,10 +113,15 @@ function MageAttackThree() {
 	} else {
 		/* do high damage */
 	}
+	return attackDamage;
 }
-/**/
+/**
+ * Returns the damage of cthulhu
+ * @returns {Number} damage dealt by Cthulhu
+ */
 function CthulhuAttack() {
 	var attackChance;
+	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 10) {
 	/* don't do any damage */
@@ -101,13 +134,14 @@ function CthulhuAttack() {
 	} else {
 		/* kill instantly */
 	}
+	return attackDamage;
 }
 
 do {
 	/* Initialize variables with their default values*/
 	flagReplay = false;
-	flagPlayer = false;
-	flagCthulhu = false;
+	flagPlayerDead = false;
+	flagCthulhuDead = false;
 	playerHealth = 100;
 	cthulhuHealth = 100;
 	damage = 0;
@@ -174,7 +208,7 @@ do {
 					alert("Cthulhu dealt " + damage + " damage. Your remaining health is " + playerHealth + ".");
 				}
 			}
-		}while (flagPlayer != true);
+		}while (flagPlayerDead != true);
 	}
 	/* Path for Mage */
 	else {
@@ -233,7 +267,7 @@ do {
 					alert("Cthulhu dealt " + damage + " damage. Your remaining health is " + playerHealth + ".");
 				}
 			}
-		}while (flagPlayer != true);
+		}while (flagPlayerDead != true);
 	}
 	/* Confirm player wants to play again or not */
 	flagReplay = window.confirm("Do you wish to play again?");

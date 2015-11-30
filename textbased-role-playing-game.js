@@ -23,10 +23,13 @@ function WarriorAttackOne() {
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
+		attackDamage = 5;
 	}else if(attackChance >= 30 && attackChance < 70) {
 		/* do medium damage */
+		attackDamage = 10;
 	} else {
 		/* do high damage */
+		attackDamage = 20;
 	}
 	return attackDamage;
 }
@@ -40,10 +43,13 @@ function WarriorAttackTwo() {
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
+		attackDamage = 3;
 	}else if(attackChance >= 30 && attackChance < 70) {
 		/* do medium damage */
+		attackDamage = 20;
 	} else {
 		/* do high damage */
+		attackDamage = 25;
 	}
 	return attackDamage;
 }
@@ -57,10 +63,13 @@ function WarriorAttackThree() {
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
+		attackDamage = 5;
 	}else if(attackChance >= 30 && attackChance < 70) {
 		/* do medium damage */
+		attackDamage = 10;
 	} else {
 		/* do high damage */
+		attackDamage = 35;
 	}
 	return attackDamage;
 }
@@ -74,10 +83,13 @@ function MageAttackOne() {
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
+		attackDamage = 5;
 	}else if(attackChance >= 30 && attackChance < 70) {
 		/* do medium damage */
+		attackDamage = 10;
 	} else {
 		/* do high damage */
+		attackDamage = 20;
 	}
 	return attackDamage;
 }
@@ -91,10 +103,13 @@ function MageAttackTwo() {
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
+		attackDamage = 3;
 	}else if(attackChance >= 30 && attackChance < 70) {
 		/* do medium damage */
+		attackDamage = 20;
 	} else {
 		/* do high damage */
+		attackDamage = 25;
 	}
 	return attackDamage;
 }
@@ -108,10 +123,13 @@ function MageAttackThree() {
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 30) {
 		/* do lover damage */
+		attackDamage = 5;
 	}else if(attackChance >= 30 && attackChance < 70) {
 		/* do medium damage */
+		attackDamage = 10;
 	} else {
 		/* do high damage */
+		attackDamage = 35;
 	}
 	return attackDamage;
 }
@@ -125,14 +143,19 @@ function CthulhuAttack() {
 	attackChance = Math.floor(Math.random() * 100);
 	if (attackChance < 10) {
 	/* don't do any damage */
+		attackDamage = 0;
 	} else if ( attackChance >= 10 && attackChance < 30 ) {
 		/* do low damage */
+		attackDamage = 10;
 	} else if (attackChance >= 30 && attackChance < 70) {
 		/* do medium damage */
+		attackDamage = 15;
 	} else if (attackChance >= 70 && attackChance < 90) {
 		/* do high damage */
+		attackDamage = 20;
 	} else {
 		/* kill instantly */
+		attackDamage = 100;
 	}
 	return attackDamage;
 }

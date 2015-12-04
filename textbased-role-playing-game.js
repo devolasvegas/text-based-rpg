@@ -170,7 +170,7 @@ do {
 	damage = 0;
 	/*------------------------------------------------------------------------------*/
 
-	alert("Welcome to /*Insert game name*/.");
+	alert("Welcome to Clash of Cthulhu.");
 	playerName = prompt("Before anything else please type your name:","Player One");
 	playerType = prompt("Please Choose your class (Warrior / Mage):").toLowerCase();
 	while ( playerType != "warrior" && playerType != "mage") {
@@ -178,7 +178,7 @@ do {
 	}
 	/* Path for warrior */
 	if (playerType == "warrior") {
-		alert("/*General story line to introduce the game to player*/");
+		alert("Welcome hero to the world of Mythos where Cthulhu has risen from his deathlike sleep to wreak havoc upon the world. It is up to you to stop him and return this world to peace. He has currently taken up residence in a cave up in the mountains, go there now and confront him to end the worlds suffering! \n After many days you have reached the summit of the mountain. What lies before you is a gargantuan cave entrance littered with cracked scales that appear to have been there for eons. Once inside the cave you notice a shadowy figure near the back of the cave sitting on throne. As you approach it dawns upon you just how far away you were from it as the figure just keeps getting bigger and bigger the closer you get. Now that you are close enough to the beast you realize he is almost 200 meters tall sitting down! As you realize this fear creeps into your thoughts as this is the foe you have come to try and vanquish to save the world. \n READY YOURSELVES FOR YOU ARE ABOUT TO FIGHT THE LEGENDARY CTHULHU!");
 		do {
 			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (attack 1, 2, 3)"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
@@ -235,7 +235,7 @@ do {
 	}
 	/* Path for Mage */
 	else {
-		alert("/*General story line to introduce the game to player*/");
+		alert("Welcome hero to the world of Mythos where Cthulhu has risen from his deathlike sleep to wreak havoc upon the world. It is up to you to stop him and return this world to peace. He has currently taken up residence in a cave up in the mountains, go there now and confront him to end the worlds suffering! \n After many days you have reached the summit of the mountain. What lies before you is a gargantuan cave entrance littered with cracked scales that appear to have been there for eons. Once inside the cave you notice a shadowy figure near the back of the cave sitting on throne. As you approach it dawns upon you just how far away you were from it as the figure just keeps getting bigger and bigger the closer you get. Now that you are close enough to the beast you realize he is almost 200 meters tall sitting down! As you realize this fear creeps into your thoughts as this is the foe you have come to try and vanquish to save the world. \n READY YOURSELVES FOR YOU ARE ABOUT TO FIGHT THE LEGENDARY CTHULHU!");
 		do {
 			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (attack 1, 2, 3)"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
@@ -295,4 +295,4 @@ do {
 	/* Confirm player wants to play again or not */
 	flagReplay = window.confirm("Do you wish to play again?");
 }while (flagReplay == true);
-alert("Thanks for playing /*insert game name*/. See you later.");
+alert("Thanks for playing Clash of Cthulhu. See you later.");

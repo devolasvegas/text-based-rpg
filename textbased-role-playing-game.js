@@ -12,7 +12,8 @@ var playerType; /* variable for player type ( Warrior or Mage ) */
 var playerName; /* container that stores player name */
 var attackType; /* container that stores which attack type player chose */
 var damage; /* container that stores damage */
-
+var logPlayerAttack; /* contains log of the attacks dealt to the cthulhu */
+var logCthulhuAttack; /* contains log of the attacks dealt to the player */
 
 /**
  * Returns the damage of Warrior attack 1
@@ -168,6 +169,8 @@ do {
 	flagCthulhuDead = false;
 	playerHealth = 100;
 	cthulhuHealth = 100;
+	logCthulhuAttack = [];
+	logPlayerAttack = [];
 	damage = 0;
 	/*------------------------------------------------------------------------------*/
 
@@ -181,9 +184,9 @@ do {
 	if (playerType == "warrior") {
 		alert("Welcome hero to the world of Mythos where Cthulhu has risen from his deathlike sleep to wreak havoc upon the world. It is up to you to stop him and return this world to peace. He has currently taken up residence in a cave up in the mountains, go there now and confront him to end the worlds suffering! \n After many days you have reached the summit of the mountain. What lies before you is a gargantuan cave entrance littered with cracked scales that appear to have been there for eons. Once inside the cave you notice a shadowy figure near the back of the cave sitting on throne. As you approach it dawns upon you just how far away you were from it as the figure just keeps getting bigger and bigger the closer you get. Now that you are close enough to the beast you realize he is almost 200 meters tall sitting down! As you realize this fear creeps into your thoughts as this is the foe you have come to try and vanquish to save the world. \n READY YOURSELVES FOR YOU ARE ABOUT TO FIGHT THE LEGENDARY CTHULHU!");
 		do {
-			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (attack 1, 2, 3)"));
+			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: \n1- Slice and Dice\n2- Overhead Smash\n3- Horizontal Slash"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
-				attackType = Number( prompt("Unknown attack type. Please choose valid attack type ( attack 1, 2, 3 ):") );
+				attackType = Number( prompt("Unknown attack type. Please choose valid attack type \n1- Slice and Dice\n2- Overhead Smash\n3- Horizontal Slash") );
 			}
 			switch ( attackType ) {
 				case 1:
@@ -211,6 +214,7 @@ do {
 					}
 					break;
 			}
+			logPlayerAttack.push(damage);
 			if (flagCthulhuDead == true) {
 				alert("You Defeated Cthulhu. You glorious bastard.");
 				break;
@@ -219,6 +223,7 @@ do {
 			}
 			/* Cthulhu's turn to attack */
 			damage = CthulhuAttack();
+			logCthulhuAttack.push(damage);
 			if (damage == 100) {
 				alert("Cthulhu killed you with one shot.");
 				flagPlayerDead = true;
@@ -238,9 +243,9 @@ do {
 	else {
 		alert("Welcome hero to the world of Mythos where Cthulhu has risen from his deathlike sleep to wreak havoc upon the world. It is up to you to stop him and return this world to peace. He has currently taken up residence in a cave up in the mountains, go there now and confront him to end the worlds suffering! \n After many days you have reached the summit of the mountain. What lies before you is a gargantuan cave entrance littered with cracked scales that appear to have been there for eons. Once inside the cave you notice a shadowy figure near the back of the cave sitting on throne. As you approach it dawns upon you just how far away you were from it as the figure just keeps getting bigger and bigger the closer you get. Now that you are close enough to the beast you realize he is almost 200 meters tall sitting down! As you realize this fear creeps into your thoughts as this is the foe you have come to try and vanquish to save the world. \n READY YOURSELVES FOR YOU ARE ABOUT TO FIGHT THE LEGENDARY CTHULHU!");
 		do {
-			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (attack 1, 2, 3)"));
+			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: \n1- Lightning Bolt\n2- Fireball\n3- Blizzard"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
-				attackType = Number( prompt("Unknown attack type. Please choose valid attack type ( attack 1, 2, 3 ):") );
+				attackType = Number( prompt("Unknown attack type. Please choose valid attack type \n1- Lightning Bolt\n2- Fireball\n3- Blizzard:") );
 			}
 			switch ( attackType ) {
 				case 1:
@@ -268,6 +273,7 @@ do {
 					}
 					break;
 			}
+			logPlayerAttack.push(damage);
 			/* Control Cthulhu is dead if it's dead finish the loop*/
 			if (flagCthulhuDead == true) {
 				alert("You Defeated Cthulhu. You glorious bastard.");
@@ -278,6 +284,7 @@ do {
 			/*-------------------------------------------------------*/
 			/* Cthulhu's turn to attack */
 			damage = CthulhuAttack();
+			logCthulhuAttack.push(damage);
 			if (damage == 100) {
 				alert("Cthulhu killed you with one shot.");
 				flagPlayerDead = true;
@@ -294,6 +301,7 @@ do {
 		}while (flagPlayerDead != true);
 	}
 	/* Confirm player wants to play again or not */
+	console.log(logCthulhuAttack, logPlayerAttack);
 	flagReplay = window.confirm("Do you wish to play again?");
 }while (flagReplay == true);
 alert("Thanks for playing Clash of Cthulhu. See you later.");

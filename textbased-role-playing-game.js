@@ -13,6 +13,7 @@ var playerName; /* container that stores player name */
 var attackType; /* container that stores which attack type player chose */
 var damage; /* container that stores damage */
 
+
 /**
  * Returns the damage of Warrior attack 1
  * @returns {Number} damage dealt by attack1

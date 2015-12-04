@@ -141,10 +141,7 @@ function CthulhuAttack() {
 	var attackChance;
 	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
-	if (attackChance < 10) {
-	/* don't do any damage */
-		attackDamage = 0;
-	} else if ( attackChance >= 10 && attackChance < 30 ) {
+	 if ( attackChance < 30 ) {
 		/* do low damage */
 		attackDamage = 10;
 	} else if (attackChance >= 30 && attackChance < 70) {

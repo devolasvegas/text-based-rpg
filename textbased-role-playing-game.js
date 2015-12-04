@@ -180,7 +180,7 @@ do {
 	if (playerType == "warrior") {
 		alert("/*General story line to introduce the game to player*/");
 		do {
-			attackType = Number(prompt("/*Player chooses an attack type (attack 1, 2, 3)*/"));
+			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (attack 1, 2, 3)"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
 				attackType = Number( prompt("Unknown attack type. Please choose valid attack type ( attack 1, 2, 3 ):") );
 			}
@@ -237,7 +237,7 @@ do {
 	else {
 		alert("/*General story line to introduce the game to player*/");
 		do {
-			attackType = Number(prompt("/*Player chooses an attack type (attack 1, 2, 3)*/"));
+			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (attack 1, 2, 3)"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
 				attackType = Number( prompt("Unknown attack type. Please choose valid attack type ( attack 1, 2, 3 ):") );
 			}

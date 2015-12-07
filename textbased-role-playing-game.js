@@ -12,7 +12,8 @@ var playerType; /* variable for player type ( Warrior or Mage ) */
 var playerName; /* container that stores player name */
 var attackType; /* container that stores which attack type player chose */
 var damage; /* container that stores damage */
-
+var logPlayerAttack; /* contains log of the attacks dealt to the cthulhu */
+var logCthulhuAttack; /* contains log of the attacks dealt to the player */
 
 /**
  * Returns the damage of Warrior attack 1
@@ -165,6 +166,8 @@ do {
 	flagCthulhuDead = false;
 	playerHealth = 100;
 	cthulhuHealth = 100;
+	logCthulhuAttack = [];
+	logPlayerAttack = [];
 	damage = 0;
 	/*------------------------------------------------------------------------------*/
 
@@ -208,6 +211,7 @@ do {
 					}
 					break;
 			}
+			logPlayerAttack.push(damage);
 			if (flagCthulhuDead == true) {
 				alert("You Defeated Cthulhu. You glorious bastard.");
 				break;
@@ -216,6 +220,7 @@ do {
 			}
 			/* Cthulhu's turn to attack */
 			damage = CthulhuAttack();
+			logCthulhuAttack.push(damage);
 			if (damage == 100) {
 				alert("Cthulhu killed you with one shot.");
 				flagPlayerDead = true;
@@ -265,6 +270,7 @@ do {
 					}
 					break;
 			}
+			logPlayerAttack.push(damage);
 			/* Control Cthulhu is dead if it's dead finish the loop*/
 			if (flagCthulhuDead == true) {
 				alert("You Defeated Cthulhu. You glorious bastard.");
@@ -275,6 +281,7 @@ do {
 			/*-------------------------------------------------------*/
 			/* Cthulhu's turn to attack */
 			damage = CthulhuAttack();
+			logCthulhuAttack.push(damage);
 			if (damage == 100) {
 				alert("Cthulhu killed you with one shot.");
 				flagPlayerDead = true;
@@ -291,6 +298,7 @@ do {
 		}while (flagPlayerDead != true);
 	}
 	/* Confirm player wants to play again or not */
+	console.log(logCthulhuAttack, logPlayerAttack);
 	flagReplay = window.confirm("Do you wish to play again?");
 }while (flagReplay == true);
 alert("Thanks for playing Clash of Cthulhu. See you later.");

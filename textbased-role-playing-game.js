@@ -143,10 +143,7 @@ function CthulhuAttack() {
 	var attackChance;
 	var attackDamage = 0;
 	attackChance = Math.floor(Math.random() * 100);
-	if (attackChance < 10) {
-	/* don't do any damage */
-		attackDamage = 0;
-	} else if ( attackChance >= 10 && attackChance < 30 ) {
+	 if ( attackChance < 30 ) {
 		/* do low damage */
 		attackDamage = 10;
 	} else if (attackChance >= 30 && attackChance < 70) {
@@ -184,9 +181,15 @@ do {
 	if (playerType == "warrior") {
 		alert("Welcome hero to the world of Mythos where Cthulhu has risen from his deathlike sleep to wreak havoc upon the world. It is up to you to stop him and return this world to peace. He has currently taken up residence in a cave up in the mountains, go there now and confront him to end the worlds suffering! \n After many days you have reached the summit of the mountain. What lies before you is a gargantuan cave entrance littered with cracked scales that appear to have been there for eons. Once inside the cave you notice a shadowy figure near the back of the cave sitting on throne. As you approach it dawns upon you just how far away you were from it as the figure just keeps getting bigger and bigger the closer you get. Now that you are close enough to the beast you realize he is almost 200 meters tall sitting down! As you realize this fear creeps into your thoughts as this is the foe you have come to try and vanquish to save the world. \n READY YOURSELVES FOR YOU ARE ABOUT TO FIGHT THE LEGENDARY CTHULHU!");
 		do {
+<<<<<<< HEAD
 			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: \n1- Slice and Dice\n2- Overhead Smash\n3- Horizontal Slash"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
 				attackType = Number( prompt("Unknown attack type. Please choose valid attack type \n1- Slice and Dice\n2- Overhead Smash\n3- Horizontal Slash") );
+=======
+			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (1-Slice and Dice\n2-Overhead Smash\n3-Horizontal Slash)"));
+			while (attackType != 1 && attackType != 2 && attackType != 3) {
+				attackType = Number( prompt("Unknown attack type. Please choose valid attack type (1-Slice and Dice\n2-Overhead Smash\n3-Horizontal Slash ):") );
+>>>>>>> devolasvegas/master
 			}
 			switch ( attackType ) {
 				case 1:
@@ -243,9 +246,15 @@ do {
 	else {
 		alert("Welcome hero to the world of Mythos where Cthulhu has risen from his deathlike sleep to wreak havoc upon the world. It is up to you to stop him and return this world to peace. He has currently taken up residence in a cave up in the mountains, go there now and confront him to end the worlds suffering! \n After many days you have reached the summit of the mountain. What lies before you is a gargantuan cave entrance littered with cracked scales that appear to have been there for eons. Once inside the cave you notice a shadowy figure near the back of the cave sitting on throne. As you approach it dawns upon you just how far away you were from it as the figure just keeps getting bigger and bigger the closer you get. Now that you are close enough to the beast you realize he is almost 200 meters tall sitting down! As you realize this fear creeps into your thoughts as this is the foe you have come to try and vanquish to save the world. \n READY YOURSELVES FOR YOU ARE ABOUT TO FIGHT THE LEGENDARY CTHULHU!");
 		do {
+<<<<<<< HEAD
 			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: \n1- Lightning Bolt\n2- Fireball\n3- Blizzard"));
 			while (attackType != 1 && attackType != 2 && attackType != 3) {
 				attackType = Number( prompt("Unknown attack type. Please choose valid attack type \n1- Lightning Bolt\n2- Fireball\n3- Blizzard:") );
+=======
+			attackType = Number(prompt(playerName + " attacks! \nChoose an attack type: (1-Lightning Bolt\n2-Fireball\n3-Blizzard)"));
+			while (attackType != 1 && attackType != 2 && attackType != 3) {
+				attackType = Number( prompt("Unknown attack type. Please choose valid attack type ( 1-Lightning Bolt\n2-Fireball\n3-Blizzard ):") );
+>>>>>>> devolasvegas/master
 			}
 			switch ( attackType ) {
 				case 1:
